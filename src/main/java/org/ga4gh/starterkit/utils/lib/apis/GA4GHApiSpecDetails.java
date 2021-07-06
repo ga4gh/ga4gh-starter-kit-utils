@@ -19,4 +19,12 @@ public class GA4GHApiSpecDetails {
         this.specGithubRepo = specGithubRepo;
         this.starterKitGithubRepo = starterKitGithubRepo;
     }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
 }

@@ -1,7 +1,11 @@
 package org.ga4gh.starterkit.utils.commands.database;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
-
+import org.ga4gh.starterkit.utils.lib.TablePrinter;
+import org.ga4gh.starterkit.utils.lib.apis.AllGA4GHApis;
+import org.ga4gh.starterkit.utils.lib.apis.GA4GHApiSpecDetails;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
@@ -20,7 +24,13 @@ public class ListApis implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("List APIs...");
+        List<String[]> table = new ArrayList<>();
+        table.add(new String[] {"API Signature", "Name", "Description"});
+        for (GA4GHApiSpecDetails details: AllGA4GHApis.getApiList()) {
+            table.add(new String[] {details.getSignature(), details.getFullName(), "coming soon"});
+        }
+
+        TablePrinter.printTable(table);
         return 0;
     }
 }

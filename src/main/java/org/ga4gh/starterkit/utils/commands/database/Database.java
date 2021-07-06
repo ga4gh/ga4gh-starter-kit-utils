@@ -11,6 +11,7 @@ import picocli.CommandLine.Command;
     mixinStandardHelpOptions = true,
     subcommands = {
         ListApis.class,
+        ListMigrations.class,
         ApplyMigration.class
     }
 )

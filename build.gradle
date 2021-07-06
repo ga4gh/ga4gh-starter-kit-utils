@@ -40,12 +40,6 @@ test {
     useTestNG()
 }
 
-compileJava {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-    options.compilerArgs += ["-Aproject=${project.name}"]
-}
-
 graal {
     mainClass 'org.ga4gh.starterkit.utils.App'
     outputName 'ga4gh-starter-kit-utils'
