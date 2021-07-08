@@ -1,7 +1,5 @@
 package org.ga4gh.starterkit.utils.lib.apis;
 
-import java.net.URI;
-
 public class GA4GHApiSpecDetails {
 
     private String signature;

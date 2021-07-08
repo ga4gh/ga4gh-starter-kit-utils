@@ -18,6 +18,10 @@ plugins {
 
 apply plugin: 'com.palantir.graal'
 
+archivesBaseName = 'ga4gh-starter-kit-utils'
+group 'org.ga4gh'
+version '0.1.0'
+
 repositories {
     jcenter()
 }
@@ -45,4 +49,11 @@ test {
 graal {
     mainClass 'org.ga4gh.starterkit.utils.App'
     outputName 'ga4gh-starter-kit-utils'
+    javaVersion '11'
+}
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    // options.compilerArgs += ["-Aproject=${project.name}"]
 }

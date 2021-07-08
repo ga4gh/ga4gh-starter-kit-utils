@@ -14,7 +14,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-
 import org.ga4gh.starterkit.utils.lib.TablePrinter;
 import org.ga4gh.starterkit.utils.lib.apis.AllGA4GHApis;
 import org.ga4gh.starterkit.utils.lib.apis.GA4GHApiSpecDetails;
@@ -74,7 +73,7 @@ public class ListMigrations implements Callable<Integer> {
             .uri(URI.create(url))
             .build();
         
-        HttpResponse response = client.send(request, BodyHandlers.ofString());
+        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         return response.body().toString();
     }
 

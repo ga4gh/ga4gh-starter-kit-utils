@@ -108,7 +108,7 @@ public class CreateOrPopulateDatabaseHandler {
             .uri(URI.create(url))
             .build();
         
-        HttpResponse response = client.send(request, BodyHandlers.ofString());
+        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         if (response.statusCode() != 200) {
             throw new Exception("Nothing found at " + changeset);
         }

@@ -1,7 +1,6 @@
 package org.ga4gh.starterkit.utils.lib.apis;
 
 import java.util.Map;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
