@@ -13,16 +13,18 @@ public class AllGA4GHApis {
             new GA4GHApiSpecDetails(
                 "drs",
                 "Data Repository Service",
-                URI.create("https://github.com/ga4gh/data-repository-service-schemas"),
-                URI.create("https://github.com/ga4gh/ga4gh-starter-kit-drs")
+                "Generic interface to different data repository types",
+                "ga4gh",
+                "ga4gh-starter-kit-drs"
             )
         );
         put("wes",
             new GA4GHApiSpecDetails(
                 "wes",
                 "Workflow Execution Service",
-                URI.create("https://github.com/ga4gh/workflow-execution-service-schemas"),
-                URI.create("https://github.com/ga4gh/ga4gh-starter-kit-wes")
+                "Submit and monitor workflow run requests",
+                "ga4gh",
+                "ga4gh-starter-kit-wes"
             )
         );
     }};

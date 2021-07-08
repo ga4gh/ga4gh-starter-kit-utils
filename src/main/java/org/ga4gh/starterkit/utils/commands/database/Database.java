@@ -12,7 +12,8 @@ import picocli.CommandLine.Command;
     subcommands = {
         ListApis.class,
         ListMigrations.class,
-        ApplyMigration.class
+        CreateTables.class,
+        AddTestDataset.class
     }
 )
 public class Database implements Callable<Integer> {

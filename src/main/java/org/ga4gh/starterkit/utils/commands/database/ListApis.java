@@ -27,7 +27,7 @@ public class ListApis implements Callable<Integer> {
         List<String[]> table = new ArrayList<>();
         table.add(new String[] {"API Signature", "Name", "Description"});
         for (GA4GHApiSpecDetails details: AllGA4GHApis.getApiList()) {
-            table.add(new String[] {details.getSignature(), details.getFullName(), "coming soon"});
+            table.add(new String[] {details.getSignature(), details.getFullName(), details.getDescription()});
         }
 
         TablePrinter.printTable(table);

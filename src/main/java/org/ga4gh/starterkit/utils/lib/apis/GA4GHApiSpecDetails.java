@@ -6,18 +6,20 @@ public class GA4GHApiSpecDetails {
 
     private String signature;
     private String fullName;
-    private URI specGithubRepo;
-    private URI starterKitGithubRepo;
+    private String description;
+    private String starterKitGithubOrg;
+    private String starterKitGithubRepoName;
 
     public GA4GHApiSpecDetails() {
 
     }
 
-    public GA4GHApiSpecDetails(String signature, String fullName, URI specGithubRepo, URI starterKitGithubRepo) {
+    public GA4GHApiSpecDetails(String signature, String fullName, String description, String starterKitGithubOrg, String starterKitGithubRepoName) {
         this.signature = signature;
         this.fullName = fullName;
-        this.specGithubRepo = specGithubRepo;
-        this.starterKitGithubRepo = starterKitGithubRepo;
+        this.description = description;
+        this.starterKitGithubOrg = starterKitGithubOrg;
+        this.starterKitGithubRepoName = starterKitGithubRepoName;
     }
 
     public String getSignature() {
@@ -26,5 +28,17 @@ public class GA4GHApiSpecDetails {
 
     public String getFullName() {
         return fullName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getStarterKitGithubOrg() {
+        return starterKitGithubOrg;
+    }
+
+    public String getStarterKitGithubRepoName() {
+        return starterKitGithubRepoName;
     }
 }
