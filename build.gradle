@@ -13,6 +13,8 @@ plugins {
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
 
+    id 'org.springframework.boot' version '2.5.0'
+
     id 'com.palantir.graal' version '0.9.0'
 }
 
@@ -24,6 +26,7 @@ version '0.1.0'
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -32,6 +35,7 @@ dependencies {
     implementation 'org.ga4gh:ga4gh-starter-kit-common:0.5.2'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.12.1'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.1'
+    // compileOnly 'org.graalvm.nativeimage:svm:21.1.0'
 
     testImplementation 'org.testng:testng:7.0.0'
 }
@@ -47,6 +51,7 @@ test {
 }
 
 graal {
+    graalVersion '21.1.0'
     mainClass 'org.ga4gh.starterkit.utils.App'
     outputName 'ga4gh-starter-kit-utils'
     javaVersion '11'
@@ -55,5 +60,4 @@ graal {
 compileJava {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
-    // options.compilerArgs += ["-Aproject=${project.name}"]
 }

@@ -10,18 +10,18 @@ Nothing:
 clean:
 	@./gradlew clean
 
-.PHONY: build
-build:
+.PHONY: jar
+jar:
+	@./gradlew bootJar
+
+.PHONY: native-image
+native-image:
 	@./gradlew nativeImage
 
-.PHONY: clean-build
-clean-build: clean build
-
 .PHONY: docker-build
-docker-build:
-	@echo ${DOCKER_IMG}
-# 	docker build -t ${DOCKER_IMG} --build-arg VERSION=${DOCKER_TAG} .
+docker-build: clean jar
+	docker build -t ${DOCKER_IMG} --build-arg VERSION=${DOCKER_TAG} .
 
-# .PHONY: docker-publish
-# docker-publish:
-# 	docker image push ${DOCKER_IMG}
+.PHONY: docker-publish
+docker-publish:
+	docker image push ${DOCKER_IMG}
