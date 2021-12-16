@@ -30,7 +30,7 @@ configurations.all {
 
 archivesBaseName = 'ga4gh-starter-kit-utils'
 group 'org.ga4gh'
-version '0.1.0'
+version '0.1.1'
 
 repositories {
     jcenter()

@@ -12,7 +12,7 @@ import picocli.CommandLine.Command;
 @Command(
     name = "list-apis",
     description = "List GA4GH APIs for which it is possible to apply a database migration",
-    version = "0.1.0",
+    version = "0.1.1",
     mixinStandardHelpOptions = true
 )
 public class ListApis implements Callable<Integer> {

@@ -24,7 +24,7 @@ import picocli.CommandLine.Parameters;
 @Command(
     name = "list-migrations",
     description = "View all available database migrations for a given GA4GH API",
-    version = "0.1.0",
+    version = "0.1.1",
     mixinStandardHelpOptions = true
 )
 public class ListMigrations implements Callable<Integer> {
