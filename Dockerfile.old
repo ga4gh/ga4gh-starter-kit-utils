@@ -1,0 +1,76 @@
+##################################################
+# BUILDER CONTAINER
+##################################################
+
+# FROM springci/graalvm-ce:stable-java11-0.10.x
+# FROM springci/graalvm-ce:stable-java11-0.10.x as builder
+# FROM bash:5.1.8
+# FROM amd64/bash:5.1.8
+# FROM bash:5.1.8 as builder
+# FROM alpine:3.14.0
+# FROM alpine:3.14.0 as builder
+# FROM amd64/alpine:3.14.0
+FROM ubuntu:18.04
+
+WORKDIR /usr/src/build
+
+# RUN apk add wget
+
+# BUILDER: INSTALL CLI DEPENDENCIES - GraalVM native-image command
+
+RUN apt-get update
+RUN apt-get install -y build-essential
+RUN apt-get install -y openjdk-11-jre-headless
+
+# RUN apt-get install -y wget
+# RUN wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-linux-amd64-21.1.0.tar.gz
+# RUN tar -zxf graalvm-ce-java11-linux-amd64-21.1.0.tar.gz
+# ENV PATH="/usr/src/build/graalvm-ce-java11-21.1.0/bin:${PATH}"
+# ENV JAVA_HOME="/usr/src/build/graalvm-ce-java11-21.1.0"
+# RUN gu install native-image
+
+# BUILDER: COPY JAVA APPLICATION SOURCE
+
+COPY gradle gradle
+COPY src src
+COPY build.gradle build.gradle
+COPY gradlew gradlew
+COPY settings.gradle settings.gradle
+
+ARG VERSION
+
+# BUILDER: BUILD JAR
+
+# RUN ./gradlew bootJar
+
+# BUILDER: 
+
+# ENV GRAALVM_HOME="/usr/src/build/graalvm-ce-java11-21.1.0"
+# RUN apt-get install -y libz-dev zlib1g-dev
+
+# BUILDER: REFLECTION TRACING
+
+# RUN mkdir -p META-INF/native-image
+
+# BUILDER: BUILD EXECUTABLE WITH native-image
+
+# java -cp build/classes/java/main -agentlib:native-image-agent=config-output-dir=META-INF/native-image org.ga4gh.starterkit.utils.App
+# java -cp "build/libs/ga4gh-starter-kit-utils-0.1.0.jar:lib/*" -agentlib:native-image-agent=config-output-dir=META-INF/native-image App
+#RUN native-image --static -jar build/libs/ga4gh-starter-kit-utils-${VERSION}.jar
+#RUN mv ga4gh-starter-kit-utils-${VERSION} ga4gh-starter-kit-utils
+
+# FROM bash:5.1.8
+# FROM alpine:3.14.0
+# WORKDIR /usr/src/app
+# COPY --from=builder /home/builder/ga4gh-starter-kit-utils ga4gh-starter-kit-utils
+# CMD ["./ga4gh-starter-kit-utils"]
+
+# export DEP_CLASSPATH=`ls -1 /root/.gradle/caches/modules-2/files-2.1/*/*/*/*/*.jar | xargs | tr ' ' ':'`
+# export CLASSPATH="build/classes/java/main:${DEP_CLASSPATH}"
+# java -cp ${CLASSPATH} -agentlib:native-image-agent=config-output-dir=META-INF/native-image org.ga4gh.starterkit.utils.App
+# java -cp ${CLASSPATH} -agentlib:native-image-agent=config-merge-dir=META-INF/native-image org.ga4gh.starterkit.utils.App database
+# java -cp ${CLASSPATH} -agentlib:native-image-agent=config-merge-dir=META-INF/native-image org.ga4gh.starterkit.utils.App database list-apis
+# java -cp ${CLASSPATH} -agentlib:native-image-agent=config-merge-dir=META-INF/native-image org.ga4gh.starterkit.utils.App database list-migrations drs
+# java -cp ${CLASSPATH} -agentlib:native-image-agent=config-merge-dir=META-INF/native-image org.ga4gh.starterkit.utils.App database create-tables drs@0.1.9
+# java -cp ${CLASSPATH} -agentlib:native-image-agent=config-merge-dir=META-INF/native-image org.ga4gh.starterkit.utils.App database add-test-dataset drs@0.1.9
+# native-image --no-fallback --static -jar build/libs/ga4gh-starter-kit-utils-0.1.0.jar
