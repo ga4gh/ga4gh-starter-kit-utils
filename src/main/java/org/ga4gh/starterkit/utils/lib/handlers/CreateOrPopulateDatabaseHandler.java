@@ -6,6 +6,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -42,9 +45,9 @@ public class CreateOrPopulateDatabaseHandler {
                     sqlCommands = getSQLCommandsFromURL(changeset, changeset);
                     break;
                 case FILE:
+                    sqlCommands = Files.readString(Path.of(changeset), StandardCharsets.US_ASCII);
                     break;
             }
-
             runSqlUpdate(dbURL, username, password, sqlCommands);
         } catch (Exception ex) {
             exitCode = 1;

@@ -26,11 +26,31 @@ public class AllGA4GHApis {
                 "ga4gh-starter-kit-wes"
             )
         );
+        put("data-connect",
+                new GA4GHApiSpecDetails(
+                        "data-connect",
+                        "Data Connect API",
+                        "Discover and search datasets",
+                        "ga4gh",
+                        "ga4gh-starter-kit-data-connect"
+                )
+        );
+        put("passport-broker",
+                new GA4GHApiSpecDetails(
+                        "passport-broker",
+                        "Passport Broker",
+                        "provides Passport jwt token",
+                        "ga4gh",
+                        "ga4gh-starter-kit-passport-broker"
+                )
+        );
     }};
 
     private static final List<String> apiKeys = new ArrayList<>() {{
         add("drs");
         add("wes");
+        add("data-connect");
+        add("passport-broker");
     }};
 
     public static Map<String, GA4GHApiSpecDetails> getApis() {
