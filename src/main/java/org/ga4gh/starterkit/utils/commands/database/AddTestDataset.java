@@ -13,7 +13,7 @@ import static org.ga4gh.starterkit.common.constant.DatabasePropsConstants.DEFAUL
 @Command(
     name = "add-test-dataset",
     description = "Populate database tables with test dataset for a particular GA4GH API",
-    version = "0.1.1",
+    version = "0.1.2",
     mixinStandardHelpOptions = true
 )
 public class AddTestDataset implements Callable<Integer> {
