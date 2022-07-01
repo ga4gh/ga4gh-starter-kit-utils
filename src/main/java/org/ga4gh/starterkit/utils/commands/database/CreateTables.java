@@ -13,7 +13,7 @@ import static org.ga4gh.starterkit.common.constant.DatabasePropsConstants.DEFAUL
 @Command(
     name = "create-tables",
     description = "Create required tables for a GA4GH API at target database",
-    version = "0.1.1",
+    version = "0.1.2",
     mixinStandardHelpOptions = true
 )
 public class CreateTables implements Callable<Integer> {

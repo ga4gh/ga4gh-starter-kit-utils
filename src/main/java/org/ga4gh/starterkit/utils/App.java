@@ -11,7 +11,7 @@ import picocli.CommandLine.Command;
 @Command(
     name = "ga4gh-starter-kit-utils",
     description = "Helper utils for GA4GH Starter Kit microservices",
-    version = "0.1.1",
+    version = "0.1.2",
     mixinStandardHelpOptions = true,
     subcommands = {
         Database.class

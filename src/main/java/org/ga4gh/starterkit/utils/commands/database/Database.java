@@ -7,7 +7,7 @@ import picocli.CommandLine.Command;
 @Command(
     name = "database",
     description = "Perform operations on databases backing starter kit services",
-    version = "0.1.1",
+    version = "0.1.2",
     mixinStandardHelpOptions = true,
     subcommands = {
         ListApis.class,
