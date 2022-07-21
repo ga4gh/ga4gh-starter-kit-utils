@@ -19,10 +19,9 @@ The "--args" argument can be modified to run any of the supported commands. The 
 Build jar
 ```
 ./gradlew bootJar
-
 ```
 ### Example: Create a database and tables
-#### i. When source is a url
+#### i. When source is a URL
 ```
 java -jar build/libs/ga4gh-starter-kit-utils-0.1.2.jar database create-tables -d jdbc:sqlite:starter-kit-data-connect.dev.db https://raw.githubusercontent.com/ga4gh/ga4gh-starter-kit-data-connect/v0.1.1/database/sqlite/create-tables.sql
 ```
@@ -39,7 +38,7 @@ java -jar build/libs/ga4gh-starter-kit-utils-0.1.2.jar database create-tables -d
 
 ### Example: Create a database and tables
 
-#### i. When source is a url
+#### i. When source is a URL
 ```
 docker run -v ./resources/drs/db:/db -v ./resources/drs/db-scripts:/db-scripts ga4gh/ga4gh-starter-kit-utils:test database create-tables -d jdbc:sqlite:/db/data-connect.db https://raw.githubusercontent.com/ga4gh/ga4gh-starter-kit-data-connect/v0.1.1/database/sqlite/create-tables.sql
 ```
@@ -81,6 +80,7 @@ The following commands can be run using either using `./gradlew bootRun` or `doc
 | Parameter Label | Parameter Name | Description | Required |
 |-----------------|----------------|-------------|----------|
 | API Signature |  | GA4GH API name. Get the list of available APIs using `database list-apis` command. | Yes |
+
 **Example:**
 ```
 ./gradlew bootRun --args="database list-migrations data-connect"
