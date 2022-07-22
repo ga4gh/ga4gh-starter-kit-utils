@@ -38,6 +38,7 @@ public class AddTestDataset implements Callable<Integer> {
 
     @Option(
         names = {"-u", "--username"},
+        paramLabel = "USERNAME",
         description = "Database username",
         defaultValue = DEFAULT_USERNAME
     )
@@ -45,6 +46,7 @@ public class AddTestDataset implements Callable<Integer> {
 
     @Option(
         names = {"-p", "--password"},
+        paramLabel = "PASSWORD",
         description = "Database password",
         defaultValue = DEFAULT_PASSWORD
     )
