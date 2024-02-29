@@ -120,3 +120,7 @@ The following commands can be run using either using `./gradlew bootRun` or `doc
 
 ### v0.1.1
 * Patched log4j dependencies to v2.16.0 to avoid [Log4j Vulnerability](https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance)
+
+## Maintainers
+
+* GA4GH Tech Team [ga4gh-tech-team@ga4gh.org](mailto:ga4gh-tech-team@ga4gh.org)
